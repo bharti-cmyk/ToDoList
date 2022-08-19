@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>
+            <%= locals.title%>
+        </title>
+        
+        <script src="https://kit.fontawesome.com/2d9b67a497.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+
+        <!-- we use wrapper class so that on decreasing the page size controls doesnt move from its place -->
+
+        <div id="wrapper">
+            <header style="background-color: blue; height: 60px; ">
+                <h1 class="head"> TODO APP</h1>
+            </header>
+
+            <!-- form to take input from user and submit to server -->
+
+        <form action="/create-list" method="POST">
+            <hr>
+	        <div class="incrWidth">
+	            <label for="text" >Description</label>
+	            <br>
+	
+		        <input type="text" name="description" placeholder="What do you need to do?">
+	
+	        </div>
+	        <hr>
+
+	        <div class="content">
+		        <div class="category">
+	                <label for="work">Category</label>
+	                <select id="work" name="category" >
+	                <option value="select" selected>Choose a Category</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Social">Social</option>
+                    </select>
+                </div>
+
+                    <div class="verticalline"></div>
+                    <div class="duedate">
+                        <label for="Date" >Due Date</label>
+                        <input type="Date" name="duedate">
+                    </div>
+            </div>
+            <hr>
+            <div class="buttons">
+                <div>
+                    <button type="submit" class="add"><h1><i class="fas fa-plus plus-ico"></i> Add Task</h1></button>
+                </div>
+            
+            </div>
+        </form>
+        
+            <ul>
+                   <!-- list fetches all record from database -->
+
+                <% for (let i of list) { %> 
+                <div class="content-detail">
+
+                        <li class="detail">
+
+                            <div class="check">
+                                <input type="checkbox" name="i">
+                            </div>
+
+                            <div class="date" id ="strike">
+                                <p ><%= i.description %></p>
+                                <p><%= i.duedate %></p>
+                            </div>
+
+                            <div class="desc">
+                                <p><%= i.category %></p>
+                            </div>
+
+                            <div class="delete">
+                                <a href="/delete-list/?id=<%= i.id %>"><p><i class="fas fa-trash trash-ico"></i>Delete</p> </a>
+                            </div>
+                        </li>
+                </div>
+                <% } %>
+                        
+            </ul>
+            
+            
+        
+        <!-- <script type="text/javascript" src="/js/home.js"></script> -->
+
+    </div>
+    </body>
+</html>

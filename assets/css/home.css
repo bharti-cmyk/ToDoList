@@ -1,0 +1,124 @@
+#wrapper {
+    margin-left:auto;
+    margin-right:auto;
+    width:960px;
+    }
+
+    body{
+        margin: 0px;
+        background-color: aliceblue;		
+        font-family: sans-serif;
+    }
+    .add{
+        color: white;
+        background-color: rgb(48, 5, 167);
+    }
+    
+    .buttons{
+        display: flex;
+        justify-content: center;
+    }
+    .head{
+        display: flex;
+        justify-content: center;
+        
+    }
+    .duedate{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        right: 239px;
+    }
+    .category{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        left: 261px;
+    }
+    .content{
+        display: flex;
+        justify-content: space-between;
+        
+
+    }
+    .verticalline{
+        border-left: 1px solid grey;
+          height: 50px;
+    }
+    input {
+        background-color: transparent;
+        border: 0px solid;
+        height: 20px;
+        width: 160px;
+        color: brown;
+    }
+    select{
+        background-color: transparent;
+        border: 0px solid;
+        height: 20px;
+        width: 160px;
+        color: brown;
+    }
+    .incrWidth{
+        text-align: center;
+    }
+    input:focus {
+    outline:none;
+    }
+    select:focus {
+    outline:none;
+    }
+    
+    
+
+    .content-detail li{
+        list-style: none;
+        text-align: center;
+    }
+
+    .content-detail .detail{
+        display: flex;
+    background-color: aqua;
+    border-bottom: 5px solid dimgray;
+    margin-bottom: 4px;
+    box-shadow: 1px 1px 0px 0px rgb(255, 208, 0);
+    }
+
+
+    .detail .date{
+        width: 50%;
+    }
+    .detail .check{
+        width: 10%;
+    margin-top: 31px;
+    margin-right: 56px;
+    }
+    .detail .desc{
+        width: 15%;
+        height: 50px;
+        background-color: chartreuse;
+        margin-top: 15px;
+        /* justify-content: end; */
+        text-align: center;
+        /* margin-top: 2; */
+        margin-left: 62px;
+    }
+    input:checked + #strike{
+        text-decoration: line-through;
+    }
+
+    .detail .delete{
+        
+        background-color: darkred;
+        width: 15%;
+        height: 50px;
+        text-align: center;
+        margin-top: 15px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .detail .delete a{
+        text-decoration: none;
+        color: white;
+    }
